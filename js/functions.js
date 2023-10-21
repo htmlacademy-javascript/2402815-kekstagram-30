@@ -1,15 +1,16 @@
-const isShortString = (string, countOfSymbols) => countOfSymbols <= string.length;
-
-isShortString('проверяемая строка', 20);
-isShortString('проверяемая строка', 18);
-isShortString('проверяемая строка', 10);
-
-const isPalindrom = (string) => {
-  const phrase = string.replaceAll(' ', '').toLowerCase();
-  let reversePhrase = '';
-  for (let i = phrase.length - 1; i >= 0; i--){
-    reversePhrase += phrase[i];
-  }
-  return reversePhrase === phrase ? 'Палиндром' : 'Не палиндром';
+const calculatingTime = (str) => {
+  const string = str.split(':');
+  if (string.length === 0){ return parseInt(string);}
+  return parseInt(string[0] * 60 + string[1]);
 };
-isPalindrom('Лёша на полке клопа нашёл ');
+const isMeetingMoved = (begin,finish,start,duration) => {
+  const beginTime = calculatingTime(begin);
+  const finishTime = calculatingTime(finish);
+  const startMeetingTime = calculatingTime(start);
+  return (startMeetingTime >= beginTime && finishTime > (startMeetingTime + duration));
+};
+
+console.log(isMeetingMoved('08:00', '17:30', '14:00', 90));
+console.log(isMeetingMoved('08:00', '14:30', '14:00', 90));// false
+console.log(isMeetingMoved('14:00', '17:30', '08:0', 90));// false
+console.log(isMeetingMoved('8:00', '17:30', '08:00', 900));// false
