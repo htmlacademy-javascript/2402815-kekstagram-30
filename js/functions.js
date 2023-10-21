@@ -1,7 +1,9 @@
 const calculatingTime = (str) => {
-  const string = str.split(':');
-  if (string.length === 0){ return parseInt(string);}
-  return parseInt(string[0] * 60 + string[1]);
+  const newString = str.split(':');
+  if (newString.length === 0){
+    return newString;
+  }
+  return (newString[0] * 60 + newString[1]);
 };
 const isMeetingMoved = (begin,finish,start,duration) => {
   const beginTime = calculatingTime(begin);
