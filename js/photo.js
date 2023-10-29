@@ -4,9 +4,8 @@ const templatePicture = document.querySelector('#picture').content.querySelector
 const fragmentOfPictures = document.createDocumentFragment();
 const listOfPictures = document.querySelector('.pictures');
 
-const addPicture = createPhotoArray();
-const showPicures = () => {
-  addPicture.forEach(({url, description, likes, comments}) => {
+const showPictures = () => {
+  createPhotoArray.forEach(({url, description, likes, comments}) => {
     const pictureElement = templatePicture.cloneNode(true);
     pictureElement.querySelector('.picture__img').src = url;
     pictureElement.querySelector('.picture__img').alt = description;
@@ -17,4 +16,4 @@ const showPicures = () => {
   listOfPictures.append(fragmentOfPictures);
 };
 
-export {showPicures};
+export {showPictures};
