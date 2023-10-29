@@ -13,8 +13,8 @@ const createTemplate = ({url, description, likes, comments}) => {
 const fillTemplates = (pictureData) => {
   const fragmentOfPictures = document.createDocumentFragment();
   pictureData.forEach((element) => {
-    const fillTemplate = createTemplate(element);
-    fragmentOfPictures.append(fillTemplate);
+    const template = createTemplate(element);
+    fragmentOfPictures.append(template);
   });
   listOfPictures.append(fragmentOfPictures);
 };
