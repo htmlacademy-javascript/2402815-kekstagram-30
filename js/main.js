@@ -1,4 +1,3 @@
-import {createPhotoArray} from './data.js';
+import {showPictures} from './photo.js';
 
-const photoData = () => createPhotoArray();
-photoData();
+showPictures();
