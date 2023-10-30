@@ -1,4 +1,4 @@
-const templatePicture = document.querySelector('#picture').content.querySelector('picture');
+const templatePicture = document.querySelector('#picture').content.querySelector('.picture');
 const listOfPictures = document.querySelector('.pictures');
 
 const createTemplate = ({url, description, likes, comments}) => {
@@ -16,7 +16,7 @@ const fillTemplates = (pictureData) => {
     const template = createTemplate(element);
     fragmentOfPictures.append(template);
   });
-  listOfPictures.append(fragmentOfPictures);
+  listOfPictures.appendChild(fragmentOfPictures);
 };
 
 export {fillTemplates};
