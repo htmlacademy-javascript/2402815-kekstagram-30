@@ -10,21 +10,21 @@ const MESSAGES = ['Всё отлично!',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'];
 const AVATAR_NAMES = ['Кошак', 'Котилка', 'Пушок', 'Слипун', 'Мохнатыш', 'Мурка' ];
 const Likes = {
-  min: 15,
-  max: 200
+  minValue: 15,
+  maxValue: 200
 };
 const Comments = {
-  min: 0,
-  max: 30
+  minValue: 0,
+  maxValue: 30
 };
 const NumberOfAvatar = {
-  min: 1,
-  max: 6
+  minValue: 1,
+  maxValue: 6
 };
 
 const createComment = (index) => ({
   id: index,
-  avatar: `img/avatar-${getRandomInteger(NumberOfAvatar.min, NumberOfAvatar.max)}.svg`,
+  avatar: `img/avatar-${getRandomInteger(NumberOfAvatar.minValue, NumberOfAvatar.maxValue)}.svg`,
   message: getRandomArrayElement(MESSAGES),
   name: getRandomArrayElement(AVATAR_NAMES)
 });
@@ -41,8 +41,8 @@ const createPhotoElement = (index) => ({
   id: index,
   url: `photos/${index}.jpg`,
   description: getRandomArrayElement(DESCRIPTIONS),
-  likes: getRandomInteger(Likes.min, Likes.max),
-  comments: createComments(getRandomInteger(Comments.min, Comments.max))
+  likes: getRandomInteger(Likes.minValue, Likes.maxValue),
+  comments: createComments(getRandomInteger(Comments.minValue, Comments.maxValue))
 });
 
 const createPhotoArray = () => {
