@@ -16,7 +16,7 @@ const fillTemplates = (pictureData) => {
     const template = createTemplate(element);
     fragmentOfPictures.append(template);
   });
-  listOfPictures.append(fragmentOfPictures);
+  listOfPictures.appendChild(fragmentOfPictures);
 };
 
 export {fillTemplates};

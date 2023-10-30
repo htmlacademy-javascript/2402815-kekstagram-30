@@ -48,8 +48,9 @@ const createPhotoElement = (index) => ({
 const createPhotoArray = () => {
   const photoArray = [];
   for (let i = 0; i < PHOTO_COUNT; i++){
-    photoArray.push(createPhotoElement[i]);
+    photoArray.push(createPhotoElement(i));
   }
+  return photoArray;
 };
 
 createPhotoArray();
