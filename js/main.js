@@ -1,4 +1,3 @@
+import {fillTemplates} from './photo.js';
 import {createPhotoArray} from './data.js';
-
-const photoData = () => createPhotoArray();
-photoData();
+fillTemplates(createPhotoArray());
