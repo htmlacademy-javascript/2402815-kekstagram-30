@@ -53,6 +53,4 @@ const createPhotoArray = () => {
   return photoArray;
 };
 
-createPhotoArray();
-
 export {createPhotoArray};

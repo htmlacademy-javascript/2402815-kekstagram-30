@@ -1,3 +1,9 @@
-import {fillTemplates} from './photo.js';
+import {renderGallery} from './galary.js';
 import {createPhotoArray} from './data.js';
-fillTemplates(createPhotoArray());
+
+renderGallery(createPhotoArray());
+
+//import {fillTemplates} from './photo.js';
+//fillTemplates(createPhotoArray());
+
+
