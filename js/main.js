@@ -1,4 +1,4 @@
-import {renderGallery} from './galary.js';
+import {renderGallery} from './gallery.js';
 import {createPhotoArray} from './data.js';
 
 renderGallery(createPhotoArray());

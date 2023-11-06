@@ -1,3 +1,5 @@
+import {fillComments} from './comments.js';
+
 const container = document.querySelector('.pictures');
 const bigPictureView = document.querySelector('.big-picture');
 //const bigPictureElement = document.querySelector('.big-picture__img');
@@ -32,10 +34,13 @@ const showPicture = (pictureData) => {
 const showBigPicture = (pictureData) => {
   bigPictureView.classList.remove('hidden');
   document.body.classList.add('modal-open');
-  showPicture(pictureData);
 
   container.addEventListener('keydown', onBigPictureEscKeydown);
   closePictureButton.addEventListener('click', onCloseButtonClick);
+
+  showPicture(pictureData);
+  fillComments(pictureData.comments);
+
 };
 
 export {showBigPicture};

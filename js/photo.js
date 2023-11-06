@@ -1,8 +1,6 @@
-//import { onPictureElementClick } from './show-pictures.js';
 const container = document.querySelector('.pictures');
 const templatePicture = document.querySelector('#picture')
   .content.querySelector('.picture');
-//const container = document.querySelector('.pictures');
 
 const createTemplate = (picture) => {
   const {url, description, likes, comments, id} = picture;
@@ -13,7 +11,6 @@ const createTemplate = (picture) => {
   pictureElement.querySelector('.picture__comments').textContent = comments.length;
   pictureElement.dataset.pictureId = id;
 
-  //pictureElement.addEventListener('click', onPictureElementClick);
   return pictureElement;
 };
 
