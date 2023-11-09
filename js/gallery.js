@@ -15,7 +15,6 @@ const renderGallery = (pictures) => {
     const pictureData = pictures.find(({id}) => id === thumbnailId);
 
     showBigPicture(pictureData);
-
   });
 
   fillTemplates(pictures);
