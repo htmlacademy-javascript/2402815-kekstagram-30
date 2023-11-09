@@ -1,7 +1,5 @@
 import {fillTemplates} from './photo.js';
 import {showBigPicture} from './show-pictures.js';
-import {fillComments} from './comments.js';
-
 
 const container = document.querySelector('.pictures');
 
@@ -17,12 +15,10 @@ const renderGallery = (pictures) => {
     const pictureData = pictures.find(({id}) => id === thumbnailId);
 
     showBigPicture(pictureData);
-    fillComments(pictureData.comments);
 
   });
 
   fillTemplates(pictures);
-
 };
 
 export {renderGallery};
