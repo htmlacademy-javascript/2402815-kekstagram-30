@@ -1,4 +1,4 @@
-import {getRandomInteger,getRandomArrayElement} from './util-generating.js';
+import {getRandomInteger, getRandomArrayElement} from './util-generating.js';
 
 const PHOTO_COUNT = 25;
 const DESCRIPTIONS = ['Мечтаю', 'Пора что-то менять', 'С друзьями', 'Путешествую', 'Привет!' ];
@@ -22,11 +22,15 @@ const NumberOfAvatar = {
   maxValue: 6
 };
 
+const createMessage = () => Array.from(
+  {length: getRandomInteger(1, 2)},
+  () => getRandomArrayElement(MESSAGES),).join(' ');
+
 const createComment = (index) => ({
   id: index,
   avatar: `img/avatar-${getRandomInteger(NumberOfAvatar.minValue, NumberOfAvatar.maxValue)}.svg`,
-  message: getRandomArrayElement(MESSAGES),
-  name: getRandomArrayElement(AVATAR_NAMES)
+  message: createMessage(),
+  name: getRandomArrayElement(AVATAR_NAMES),
 });
 
 const createComments = (number) => {
@@ -49,10 +53,9 @@ const createPhotoArray = () => {
   const photoArray = [];
   for (let i = 0; i < PHOTO_COUNT; i++){
     photoArray.push(createPhotoElement(i));
+
   }
   return photoArray;
 };
-
-createPhotoArray();
 
 export {createPhotoArray};
