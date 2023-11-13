@@ -1,4 +1,4 @@
-const container = document.querySelector('.pictures');
+//const container = document.querySelector('.pictures');
 const bigPictureView = document.querySelector('.big-picture');
 const closePictureButton = document.querySelector('.big-picture__cancel');
 const commentsCounter = bigPictureView.querySelector('.social__comment-count');
@@ -46,8 +46,8 @@ const onCloseButtonClick = () => {
 
 const fillComments = () => {
   const fragmentOfComments = document.createDocumentFragment();
-  commentsCountShown += COMMENTS_COUNT_STEP;
   commentsList.innerHTML = '';
+  commentsCountShown += COMMENTS_COUNT_STEP;
 
   if(commentsCountShown >= comments.length){
     commentsLoader.classList.add('hidden');
@@ -68,8 +68,6 @@ const fillComments = () => {
 
 const onCommentsLoaderClick = () => {
   fillComments();
-
-  commentsLoader.removeEventListener('click', onCommentsLoaderClick);
 };
 
 const showPicture = (pictureData) => {
@@ -83,7 +81,7 @@ const showBigPicture = (pictureData) => {
   bigPictureView.classList.remove('hidden');
   document.body.classList.add('modal-open');
 
-  container.addEventListener('keydown', onBigPictureEscKeydown);
+  document.addEventListener('keydown', onBigPictureEscKeydown);
   closePictureButton.addEventListener('click', onCloseButtonClick);
 
   showPicture(pictureData);
@@ -92,6 +90,7 @@ const showBigPicture = (pictureData) => {
 
   fillComments();
 };
+
 commentsLoader.addEventListener('click', onCommentsLoaderClick);
 export {showBigPicture};
 
