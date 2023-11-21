@@ -94,11 +94,11 @@ const onHashtagFieldClick = (value) => {
     },
     {
       check: inputArray.some((item) => item.length > MAX_SYMBOLS),
-      error: 'Максимальная длина хэш-тега ${MAX_SYMBOLS} символов, включая #',
+      error: `Максимальная длина хэш-тега ${MAX_SYMBOLS} символов`,
     },
     {
       check: inputArray.length > MAX_HASHTAG_COUNT,
-      error: 'Максимальное количество хэш-тегов должно быть не более ${MAX_HASHTAG_COUNT}',
+      error: `Максимальное количество хэш-тегов должно быть не более ${MAX_HASHTAG_COUNT}`,
     },
     {
       check: inputArray.some((item) => /^#[a-zа-яё0-9]{1-19}$/i.test(item)),
